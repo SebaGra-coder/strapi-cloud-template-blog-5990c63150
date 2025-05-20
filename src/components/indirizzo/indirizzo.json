@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_indirizzo_indirizzos",
+  "info": {
+    "displayName": "Indirizzo",
+    "icon": "pinMap",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "CAP": {
+      "type": "string",
+      "required": true,
+      "maxLength": 9
+    },
+    "Citta": {
+      "type": "string",
+      "required": true
+    },
+    "Paese": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "kind": "collectionType",
+  "collectionName": "candidatos",
+  "info": {
+    "singularName": "candidato",
+    "pluralName": "candidatos",
+    "displayName": "Candidato",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "CandidatoID": {
+      "type": "uid",
+      "required": true
+    },
+    "Nome": {
+      "type": "string"
+    },
+    "Cognome": {
+      "type": "string"
+    },
+    "Nascita": {
+      "type": "date"
+    },
+    "Sesso": {
+      "type": "enumeration",
+      "enum": [
+        "Maschio",
+        "Femmina"
+      ]
+    },
+    "Cellulare": {
+      "type": "biginteger"
+    },
+    "Luogo_nascita": {
+      "type": "component",
+      "repeatable": false,
+      "component": "indirizzo.indirizzo"
+    },
+    "Indirizzo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "indirizzo.indirizzo"
+    },
+    "usersID": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "candidato"
+    },
+    "preferitos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::preferito.preferito",
+      "mappedBy": "candidato"
+    },
+    "candidaturas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::candidatura.candidatura",
+      "mappedBy": "candidato"
+    },
+    "suggerimentos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::suggerimento.suggerimento",
+      "mappedBy": "candidato"
+    },
+    "notificas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::notifica.notifica",
+      "mappedBy": "candidato"
+    },
+    "certificaziones": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::certificazione.certificazione",
+      "mappedBy": "candidato"
+    },
+    "soft_skills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::soft-skill.soft-skill",
+      "mappedBy": "candidato"
+    },
+    "competenzas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::competenza.competenza",
+      "mappedBy": "candidato"
+    }
+  }
+}

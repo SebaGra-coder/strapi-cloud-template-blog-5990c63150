@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "competenzas",
+  "info": {
+    "singularName": "competenza",
+    "pluralName": "competenzas",
+    "displayName": "Competenza"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "CompetenzaID": {
+      "type": "uid"
+    },
+    "Nome": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "Tipo": {
+      "type": "string"
+    },
+    "Livello": {
+      "type": "string"
+    },
+    "candidato": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::candidato.candidato",
+      "inversedBy": "competenzas"
+    }
+  }
+}

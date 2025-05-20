@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "certificaziones",
+  "info": {
+    "singularName": "certificazione",
+    "pluralName": "certificaziones",
+    "displayName": "Certificazione"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "CertID": {
+      "type": "uid",
+      "required": true
+    },
+    "Nome": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Ente_rilascio": {
+      "type": "string",
+      "required": true
+    },
+    "Data_conseguimento": {
+      "type": "date",
+      "required": true
+    },
+    "Scadenza": {
+      "type": "date",
+      "required": true
+    },
+    "candidato": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::candidato.candidato",
+      "inversedBy": "certificaziones"
+    }
+  }
+}

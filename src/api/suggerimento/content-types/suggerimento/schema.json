@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "suggerimentos",
+  "info": {
+    "singularName": "suggerimento",
+    "pluralName": "suggerimentos",
+    "displayName": "Suggerimento"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "SuggID": {
+      "type": "uid",
+      "required": true
+    },
+    "Tipo": {
+      "type": "string",
+      "required": true
+    },
+    "Titolo": {
+      "type": "string",
+      "required": true
+    },
+    "Descrizione": {
+      "type": "text",
+      "required": true
+    },
+    "Motivazione": {
+      "type": "text"
+    },
+    "Link": {
+      "type": "string",
+      "required": true
+    },
+    "Data_suggerimento": {
+      "type": "datetime"
+    },
+    "Visualizza": {
+      "type": "boolean",
+      "required": true
+    },
+    "candidato": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::candidato.candidato",
+      "inversedBy": "suggerimentos"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notificas",
+  "info": {
+    "singularName": "notifica",
+    "pluralName": "notificas",
+    "displayName": "Notifica"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "NotificaID": {
+      "type": "uid",
+      "required": true
+    },
+    "Tipo": {
+      "type": "string",
+      "required": true
+    },
+    "Titolo": {
+      "type": "string",
+      "required": true
+    },
+    "Messaggio": {
+      "type": "text",
+      "required": true
+    },
+    "Time_stamp": {
+      "type": "datetime",
+      "required": true
+    },
+    "Lettura": {
+      "type": "boolean",
+      "required": true
+    },
+    "link_azione": {
+      "type": "string"
+    },
+    "candidato": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::candidato.candidato",
+      "inversedBy": "notificas"
+    }
+  }
+}

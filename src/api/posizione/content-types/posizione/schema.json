@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posiziones",
+  "info": {
+    "singularName": "posizione",
+    "pluralName": "posiziones",
+    "displayName": "Posizione",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "PosID": {
+      "type": "uid",
+      "required": true
+    },
+    "Titolo": {
+      "type": "string",
+      "required": true
+    },
+    "Descrizione": {
+      "type": "text",
+      "required": true
+    },
+    "Contratto": {
+      "type": "string",
+      "required": false
+    },
+    "Modalita_lavoro": {
+      "type": "string"
+    },
+    "Stipendio_min": {
+      "type": "decimal"
+    },
+    "Stipendio_max": {
+      "type": "decimal"
+    },
+    "Pubblicazione": {
+      "type": "datetime"
+    },
+    "Scadenza": {
+      "type": "datetime"
+    },
+    "Attiva": {
+      "type": "boolean"
+    },
+    "azienda": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::azienda.azienda",
+      "inversedBy": "posiziones"
+    },
+    "candidaturas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::candidatura.candidatura",
+      "mappedBy": "posizione"
+    },
+    "preferitos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::preferito.preferito",
+      "mappedBy": "posiziones"
+    },
+    "requisito_tecnicos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::requisito-tecnico.requisito-tecnico",
+      "mappedBy": "posizione"
+    },
+    "skill_richiestas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::skill-richiesta.skill-richiesta",
+      "mappedBy": "posizione"
+    }
+  }
+}

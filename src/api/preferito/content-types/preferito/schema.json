@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "preferitos",
+  "info": {
+    "singularName": "preferito",
+    "pluralName": "preferitos",
+    "displayName": "Preferito",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Data_aggiunta": {
+      "type": "datetime"
+    },
+    "posiziones": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::posizione.posizione",
+      "inversedBy": "preferitos"
+    },
+    "candidato": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::candidato.candidato",
+      "inversedBy": "preferitos"
+    }
+  }
+}

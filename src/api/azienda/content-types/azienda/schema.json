@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aziendas",
+  "info": {
+    "singularName": "azienda",
+    "pluralName": "aziendas",
+    "displayName": "Azienda",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "AziendaID": {
+      "type": "uid",
+      "required": true
+    },
+    "Descrizione": {
+      "type": "text",
+      "required": true
+    },
+    "Settore": {
+      "type": "string",
+      "required": true
+    },
+    "Sito": {
+      "type": "string"
+    },
+    "Ragione_sociale": {
+      "type": "string",
+      "required": true
+    },
+    "Partita_iva": {
+      "type": "string",
+      "required": true
+    },
+    "Cellulare": {
+      "type": "string"
+    },
+    "Indirizzo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "indirizzo.indirizzo"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "azienda"
+    },
+    "posiziones": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::posizione.posizione",
+      "mappedBy": "azienda"
+    }
+  }
+}
