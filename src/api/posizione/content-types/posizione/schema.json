@@ -57,22 +57,22 @@
       "target": "api::candidatura.candidatura",
       "mappedBy": "posizione"
     },
-    "preferitos": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::preferito.preferito",
-      "mappedBy": "posiziones"
-    },
-    "requisito_tecnicos": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::requisito-tecnico.requisito-tecnico",
-      "mappedBy": "posizione"
-    },
     "skill_richiestas": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::skill-richiesta.skill-richiesta",
+      "mappedBy": "posizione"
+    },
+    "tests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::test.test",
+      "mappedBy": "posizione"
+    },
+    "preferitos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::preferito.preferito",
       "mappedBy": "posizione"
     }
   }

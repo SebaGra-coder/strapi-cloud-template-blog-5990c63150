@@ -4,7 +4,8 @@
   "info": {
     "singularName": "skill-richiesta",
     "pluralName": "skill-richiestas",
-    "displayName": "Skill_richiesta"
+    "displayName": "Skill_richiesta",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,16 +23,21 @@
       "type": "text",
       "required": true
     },
-    "Punteggio_min": {
-      "type": "integer",
-      "max": 100,
-      "required": true
-    },
     "posizione": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::posizione.posizione",
       "inversedBy": "skill_richiestas"
+    },
+    "Livello": {
+      "type": "string"
+    },
+    "Tipo": {
+      "type": "enumeration",
+      "enum": [
+        "Tecnica",
+        "Attitudinale"
+      ]
     }
   }
 }

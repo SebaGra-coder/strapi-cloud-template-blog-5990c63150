@@ -4,7 +4,8 @@
   "info": {
     "singularName": "competenza",
     "pluralName": "competenzas",
-    "displayName": "Competenza"
+    "displayName": "Competenza",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,9 +19,6 @@
       "required": true,
       "unique": false
     },
-    "Tipo": {
-      "type": "string"
-    },
     "Livello": {
       "type": "string"
     },
@@ -29,6 +27,13 @@
       "relation": "manyToOne",
       "target": "api::candidato.candidato",
       "inversedBy": "competenzas"
+    },
+    "Tipo": {
+      "type": "enumeration",
+      "enum": [
+        "Tecnica",
+        "Attitudinale"
+      ]
     }
   }
 }

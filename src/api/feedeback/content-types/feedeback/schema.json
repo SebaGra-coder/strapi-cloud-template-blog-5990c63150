@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feedebacks",
+  "info": {
+    "singularName": "feedeback",
+    "pluralName": "feedebacks",
+    "displayName": "Feedeback"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "FeedID": {
+      "type": "uid"
+    },
+    "Commento": {
+      "type": "string"
+    },
+    "Data": {
+      "type": "datetime"
+    },
+    "candidatura": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::candidatura.candidatura"
+    },
+    "test": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::test.test",
+      "inversedBy": "feedeback"
+    },
+    "candidato": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::candidato.candidato",
+      "inversedBy": "feedebacks"
+    },
+    "azienda": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::azienda.azienda",
+      "inversedBy": "feedebacks"
+    }
+  }
+}

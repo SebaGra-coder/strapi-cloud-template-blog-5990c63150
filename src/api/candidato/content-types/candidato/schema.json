@@ -62,34 +62,46 @@
       "target": "api::candidatura.candidatura",
       "mappedBy": "candidato"
     },
-    "suggerimentos": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::suggerimento.suggerimento",
-      "mappedBy": "candidato"
-    },
     "notificas": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::notifica.notifica",
       "mappedBy": "candidato"
     },
-    "certificaziones": {
+    "competenzas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::competenza.competenza",
+      "mappedBy": "candidato"
+    },
+    "patentis": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::patenti.patenti",
+      "mappedBy": "candidato"
+    },
+    "linguas": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::certificazione.certificazione",
       "mappedBy": "candidato"
     },
-    "soft_skills": {
+    "tests": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::test.test",
+      "mappedBy": "candidatoes"
+    },
+    "feedebacks": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::soft-skill.soft-skill",
+      "target": "api::feedeback.feedeback",
       "mappedBy": "candidato"
     },
-    "competenzas": {
+    "colloquios": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::competenza.competenza",
+      "target": "api::colloquio.colloquio",
       "mappedBy": "candidato"
     }
   }

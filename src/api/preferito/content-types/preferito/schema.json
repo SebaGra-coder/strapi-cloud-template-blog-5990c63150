@@ -14,9 +14,9 @@
     "Data_aggiunta": {
       "type": "datetime"
     },
-    "posiziones": {
+    "posizione": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "manyToOne",
       "target": "api::posizione.posizione",
       "inversedBy": "preferitos"
     },
@@ -25,6 +25,9 @@
       "relation": "manyToOne",
       "target": "api::candidato.candidato",
       "inversedBy": "preferitos"
+    },
+    "PrefeID": {
+      "type": "uid"
     }
   }
 }

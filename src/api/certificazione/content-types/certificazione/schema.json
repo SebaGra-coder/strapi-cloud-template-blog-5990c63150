@@ -4,13 +4,14 @@
   "info": {
     "singularName": "certificazione",
     "pluralName": "certificaziones",
-    "displayName": "Certificazione"
+    "displayName": "Lingua",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "CertID": {
+    "LinguaID": {
       "type": "uid",
       "required": true
     },
@@ -19,23 +20,20 @@
       "required": true,
       "unique": true
     },
-    "Ente_rilascio": {
-      "type": "string",
-      "required": true
-    },
-    "Data_conseguimento": {
-      "type": "date",
-      "required": true
-    },
-    "Scadenza": {
-      "type": "date",
-      "required": true
-    },
     "candidato": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::candidato.candidato",
-      "inversedBy": "certificaziones"
+      "inversedBy": "linguas"
+    },
+    "Orale": {
+      "type": "string"
+    },
+    "Scrittura": {
+      "type": "string"
+    },
+    "Lettura": {
+      "type": "string"
     }
   }
 }

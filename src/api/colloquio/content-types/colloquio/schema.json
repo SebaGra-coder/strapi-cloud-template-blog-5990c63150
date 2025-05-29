@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "colloquios",
+  "info": {
+    "singularName": "colloquio",
+    "pluralName": "colloquios",
+    "displayName": "Colloquio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "ColloID": {
+      "type": "uid"
+    },
+    "Data_ora": {
+      "type": "datetime"
+    },
+    "Tipo": {
+      "type": "enumeration",
+      "enum": [
+        "Online",
+        "Presenza"
+      ]
+    },
+    "Link": {
+      "type": "string"
+    },
+    "Stato": {
+      "type": "enumeration",
+      "enum": [
+        "Programmato",
+        "Completato",
+        "Annullato"
+      ]
+    },
+    "candidatura": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::candidatura.candidatura",
+      "inversedBy": "colloquio"
+    },
+    "azienda": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::azienda.azienda",
+      "inversedBy": "colloquios"
+    },
+    "candidato": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::candidato.candidato",
+      "inversedBy": "colloquios"
+    }
+  }
+}

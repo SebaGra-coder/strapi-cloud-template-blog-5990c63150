@@ -42,6 +42,12 @@
       "relation": "manyToOne",
       "target": "api::candidato.candidato",
       "inversedBy": "candidaturas"
+    },
+    "colloquio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::colloquio.colloquio",
+      "mappedBy": "candidatura"
     }
   }
 }

@@ -53,6 +53,18 @@
       "relation": "oneToMany",
       "target": "api::posizione.posizione",
       "mappedBy": "azienda"
+    },
+    "feedebacks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feedeback.feedeback",
+      "mappedBy": "azienda"
+    },
+    "colloquios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::colloquio.colloquio",
+      "mappedBy": "azienda"
     }
   }
 }

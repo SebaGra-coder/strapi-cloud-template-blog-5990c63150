@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tests",
+  "info": {
+    "singularName": "test",
+    "pluralName": "tests",
+    "displayName": "Test",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "TestID": {
+      "type": "uid"
+    },
+    "Titolo": {
+      "type": "string"
+    },
+    "Descrizione": {
+      "type": "text"
+    },
+    "Durata": {
+      "type": "time"
+    },
+    "Punteggio_min": {
+      "type": "integer",
+      "max": 100,
+      "min": 0
+    },
+    "candidatoes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::candidato.candidato",
+      "inversedBy": "tests"
+    },
+    "posizione": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::posizione.posizione",
+      "inversedBy": "tests"
+    },
+    "feedeback": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::feedeback.feedeback",
+      "mappedBy": "test"
+    }
+  }
+}

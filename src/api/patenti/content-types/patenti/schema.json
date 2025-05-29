@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "patentis",
+  "info": {
+    "singularName": "patenti",
+    "pluralName": "patentis",
+    "displayName": "Patente",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Conseguimento": {
+      "type": "date",
+      "required": false
+    },
+    "Scadenza": {
+      "type": "date",
+      "required": false
+    },
+    "candidato": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::candidato.candidato",
+      "inversedBy": "patentis"
+    },
+    "Tipo": {
+      "type": "string",
+      "required": true
+    },
+    "PateID": {
+      "type": "uid",
+      "targetField": "Tipo",
+      "required": true
+    }
+  }
+}
