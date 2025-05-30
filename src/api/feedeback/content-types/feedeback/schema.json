@@ -4,7 +4,8 @@
   "info": {
     "singularName": "feedeback",
     "pluralName": "feedebacks",
-    "displayName": "Feedeback"
+    "displayName": "Feedeback",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
