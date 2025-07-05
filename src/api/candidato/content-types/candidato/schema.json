@@ -80,7 +80,7 @@
       "target": "api::patenti.patenti",
       "mappedBy": "candidato"
     },
-    "linguas": {
+    "certificaziones": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::certificazione.certificazione",
