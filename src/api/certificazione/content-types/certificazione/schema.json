@@ -4,7 +4,7 @@
   "info": {
     "singularName": "certificazione",
     "pluralName": "certificaziones",
-    "displayName": "Lingua",
+    "displayName": "Certificazione",
     "description": ""
   },
   "options": {
@@ -24,7 +24,7 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::candidato.candidato",
-      "inversedBy": "linguas"
+      "inversedBy": "certificaziones"
     },
     "Orale": {
       "type": "string"
