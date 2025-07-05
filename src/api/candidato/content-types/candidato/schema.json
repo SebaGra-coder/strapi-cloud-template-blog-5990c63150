@@ -83,7 +83,7 @@
     "linguas": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::lingua.lingua",
+      "target": "api::certificazione.certificazione",
       "mappedBy": "candidato"
     },
     "tests": {
