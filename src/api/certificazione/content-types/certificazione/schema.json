@@ -17,8 +17,7 @@
     },
     "Nome": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": true
     },
     "candidato": {
       "type": "relation",
